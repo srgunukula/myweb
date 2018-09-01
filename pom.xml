@@ -4,14 +4,11 @@
 	<groupId>in.javahome</groupId>
 	<artifactId>myweb</artifactId>
 	<packaging>war</packaging>
-<<<<<<< HEAD
 	<!-- Demo-->
 	<version>3.1.1-SNAPSHOT</version>
-=======
-	<version>0.12.2-SNAPSHOT</version>
->>>>>>> 17e03ba53c2a0fb5af116f5bd57006e13268f562
 	<name>myweb Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	
 	<properties>
 		<docker.image.prefix>kammana</docker.image.prefix>
 	</properties>	
@@ -42,7 +39,11 @@
 		    <artifactId>poi</artifactId>
 		    <version>3.7</version>
 		</dependency>
-
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>3.7</version>
+		</dependency>
 
 		<!-- <dependency>
 		  <groupId>org.sonarsource.java</groupId>
@@ -52,17 +53,18 @@
 		</dependency> -->
 	</dependencies>
 	
+
+	
 	<distributionManagement>
+		 <snapshotRepository>
+		    <id>nexus</id>
+		    <url>http://13.232.45.152:8081/repository/maven-snapshots/</url>
+		 </snapshotRepository>
+		
 		<repository>
-			<id>nexus</id>
-			<name>Releases</name>
-			<url>http://172.18.0.1:8081/repository/maven2-hosted2-rel/</url>
+		    <id>nexus</id>
+		    <url>http://13.232.45.152:8081/repository/maven-releases/</url>
 		</repository>
-		<snapshotRepository>
-			<id>nexus</id>
-			<name>Snapshot</name>
-			<url>http://172.18.0.1:8081/repository/maven2-hosted2/</url>
-		</snapshotRepository>
   	</distributionManagement>
 	
 <build>
